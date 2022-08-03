@@ -1,0 +1,26 @@
+name: Update Index
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'rabbitmq-0.1.0.tgz'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+      - name: Helm Installation
+        uses: aws/setup-helm@v1.1
+        with:
+          version: v3.7.0
+      - name: Update Index
+        run: |
+          helm repo index .
+          git config --global user.email "kanchikumar@glenise.in"
+          git config --global user.name "Kanchikumar-glenise"
+          git add index.yaml
+          git commit -m "Update chart index"
+          git push
