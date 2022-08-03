@@ -9,7 +9,7 @@ entries:
     name: rabbitmq
     type: application
     urls:
-    - https://github.com/Kanchikumar-glenise/helm-charts.git
+    - https://github.com/Kanchikumar-glenise/helm-charts/main/rabbitmq-0.1.0.tgz
     version: 0.1.0
 generated: "2022-08-02T21:07:39.8883275+05:30"
 
